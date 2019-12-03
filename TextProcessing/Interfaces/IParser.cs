@@ -9,7 +9,7 @@ namespace TextProcessing.Interfaces
     public interface IParser
     {
         void Parse(IText text, StreamReader sr);
-
         ICollection<ISentenceItem> ParseLine(string line);
+
     }
 }

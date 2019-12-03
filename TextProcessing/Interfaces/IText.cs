@@ -9,5 +9,6 @@ namespace TextProcessing.Interfaces
         void Add(ISentence sentence);
 
         ISentence GetSentenceById(int index);
+
     }
 }

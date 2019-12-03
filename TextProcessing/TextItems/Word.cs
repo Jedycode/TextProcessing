@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 using TextProcessing.Interfaces;
+using TextProcessing.CharCheck;
+using System.Runtime.Serialization;
 
 namespace TextProcessing.TextItems
 {
@@ -13,6 +16,10 @@ namespace TextProcessing.TextItems
         public int Length
         {
             get => Symbols.Length;
+        }
+        public bool StartWithConsonant()
+        {
+            return Symbols.FirstOrDefault().IsConsonant();
         }
     }
 }

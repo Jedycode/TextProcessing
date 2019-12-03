@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using TextProcessing.Interfaces;
+using System.Runtime.Serialization;
 
 namespace TextProcessing.TextItems
 {

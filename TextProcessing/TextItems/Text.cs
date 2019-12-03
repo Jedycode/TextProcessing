@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using TextProcessing.Interfaces;
 using System.Linq;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Xml;
 
 namespace TextProcessing.TextItems
 {
@@ -40,6 +43,24 @@ namespace TextProcessing.TextItems
 
             return _sentences.ElementAt(index);
         }
+        public ICollection<ISentence> GetSentences(Func<ISentence, bool> selector = null)
+        {
+            return selector == null ?
+                new List<ISentence>(_sentences) :
+                new List<ISentence>(_sentences.Where(selector).ToList());
+        }
+        public override string ToString()
+        {
+            StringBuilder stringBuilder = new StringBuilder();
+
+            foreach (var item in _sentences)
+            {
+                stringBuilder.Append(item.ToString());
+            }
+
+            return stringBuilder.ToString();
+        }
+
 
 
 

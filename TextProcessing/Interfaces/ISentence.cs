@@ -16,6 +16,7 @@ namespace TextProcessing.Interfaces
         ICollection<ISentenceItem> InsertInsteadOf<T>(Predicate<T> predicate,
             IList<ISentenceItem> elements)
             where T : ISentenceItem;
+        bool IsInterrogative();
     }
 }
-}
+
